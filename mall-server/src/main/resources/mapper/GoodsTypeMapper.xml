@@ -22,7 +22,7 @@
         SELECT a.*,b.`NAME` f_name FROM goods_type  a LEFT JOIN goods_type b on a.F_ID = b.ID_
          where 1=1
             <if test="key != null and key != ''">
-                and a.name like '%${key}%' or a.code like '%${key}%' or b.name = like '%${key}%'
+                and a.name like '%${key}%' or a.code like '%${key}%' or b.name like '%${key}%'
             </if>
     </select>
 </mapper>

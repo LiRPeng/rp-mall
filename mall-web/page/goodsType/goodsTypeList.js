@@ -6,7 +6,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
         table = layui.table;
 
     //类别列表
-    var tableIns  = table.render({
+    var tableIns = table.render({
         elem: '#GoodsTypeList',
         url: basePath + '/goods/type',
         cellMinWidth: 95,
@@ -52,9 +52,9 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 if (edit) {
-                    body.find(".code").val(edit.code);
-                    body.find(".name").val(edit.name);
-                    body.find(".fId").val(edit.fId);
+                    body.find(".code").val(edit.CODE);
+                    body.find(".name").val(edit.NAME);
+                    body.find(".fId").val(edit.F_ID);
                     form.render();
                 }
                 setTimeout(function () {
@@ -106,9 +106,9 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
         } else if (layEvent === 'del') { //删除
             layer.confirm('确定删除此类别？', {icon: 3, title: '提示信息'}, function (index) {
                 $.ajax({
-                    url: basePath + "/goods/type/" + data.id,
+                    url: basePath + "/goods/type/" + data.ID_,
                     type: 'DELETE',
-                    data: {},
+                    async: true,
                     success: function (data) {
                         if (data.code === 200) {
                             tableIns.reload();
@@ -119,28 +119,6 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
                     }
                 });
             });
-        } else if (layEvent === 'look') { //子类别
-            var index = layui.layer.open({
-                title: "子类别",
-                type: 2,
-                content: "goodsTypeList.html",
-                success: function (layero, index) {
-                    var body = layui.layer.getChildFrame('body', index);
-                    alert(data.id);
-                    body.find(".fId").val(data.id);
-                    form.render();
-                    setTimeout(function () {
-                        layui.layer.tips('点击此处返回类别列表', '.layui-layer-setwin .layui-layer-close', {
-                            tips: 3
-                        });
-                    }, 500)
-                }
-            })
-            layui.layer.full(index);
-            //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
-            $(window).on("resize", function () {
-                layui.layer.full(index);
-            })
         }
     });
 

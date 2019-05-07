@@ -1,18 +1,18 @@
 layui.use(['form', 'layer'], function () {
     var form = layui.form
-         layer = parent.layer === undefined ? layui.layer : top.layer,
+    layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery;
     //初始化父级选项
     $.ajax({
         type: "get",
         url: basePath + '/goods/type',
         async: true,
-        success: function(data) {
+        success: function (data) {
             var list = data.data;
             var str = '';
             for (var i in list) {
                 var obj = list[i];
-                str = str + '<option value="' + obj.ID_+ '">' + obj.NAME + '</option>';
+                str = str + '<option value="' + obj.ID_ + '">' + obj.NAME + '</option>';
             }
             $('.fId').append(str);
             form.render('select');
@@ -29,6 +29,7 @@ layui.use(['form', 'layer'], function () {
                 name: $(".name").val(),  //类别名称
                 fId: $(".fId").val()  //类别名称
             },
+            async: true,
             success: function (data) {
                 if (data.code === 200) {
                     top.layer.msg("添加类别成功！");
