@@ -53,7 +53,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     });
 
     form.verify({
-        newsName : function(val){
+        goodsName : function(val){
             if(val == ''){
                 return "文章标题不能为空";
             }
@@ -71,7 +71,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
         // 实际使用时的提交信息
         // $.post("上传路径",{
-        //     newsName : $(".newsName").val(),  //文章标题
+        //     goodsName : $(".goodsName").val(),  //文章标题
         //     abstract : $(".abstract").val(),  //文章摘要
         //     content : layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容
         //     newsImg : $(".thumbImg").attr("src"),  //缩略图
@@ -100,7 +100,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 
     //创建一个编辑器
     var editIndex = layedit.build('news_content',{
-        height : 535,
+        height : 200,
         uploadImage : {
             url : "../../json/newsImg.json"
         }
