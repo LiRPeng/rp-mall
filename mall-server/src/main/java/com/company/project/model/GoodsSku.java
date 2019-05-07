@@ -66,6 +66,12 @@ public class GoodsSku {
     private Integer amount;
 
     /**
+     * 图片
+     */
+    @Column(name = "GOOD_IMG")
+    private String goodImg;
+
+    /**
      * 获取id
      *
      * @return ID_ - id
@@ -243,5 +249,23 @@ public class GoodsSku {
      */
     public void setAmount(Integer amount) {
         this.amount = amount;
+    }
+
+    /**
+     * 获取图片
+     *
+     * @return GOOD_IMG - 图片
+     */
+    public String getGoodImg() {
+        return goodImg;
+    }
+
+    /**
+     * 设置图片
+     *
+     * @param goodImg 图片
+     */
+    public void setGoodImg(String goodImg) {
+        this.goodImg = goodImg;
     }
 }

@@ -15,5 +15,6 @@
     <result column="STOCK" jdbcType="INTEGER" property="stock" />
     <result column="BROK" jdbcType="DECIMAL" property="brok" />
     <result column="AMOUNT" jdbcType="INTEGER" property="amount" />
+    <result column="GOOD_IMG" jdbcType="VARCHAR" property="goodImg" />
   </resultMap>
 </mapper>

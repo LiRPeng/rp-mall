@@ -4,7 +4,7 @@ import com.company.project.core.Service;
 
 
 /**
- * Created by CodeGenerator on 2019/04/30.
+ * Created by CodeGenerator on 2019/05/07.
  */
 public interface GoodsService extends Service<Goods> {
 

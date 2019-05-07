@@ -65,6 +65,18 @@ public class Goods {
     private Integer deleted;
 
     /**
+     * 基本参数
+     */
+    @Column(name = "PARAM")
+    private String param;
+
+    /**
+     * 单位
+     */
+    @Column(name = "UNIT")
+    private String unit;
+
+    /**
      * 获取ID
      *
      * @return ID_ - ID
@@ -242,5 +254,41 @@ public class Goods {
      */
     public void setDeleted(Integer deleted) {
         this.deleted = deleted;
+    }
+
+    /**
+     * 获取基本参数
+     *
+     * @return PARAM - 基本参数
+     */
+    public String getParam() {
+        return param;
+    }
+
+    /**
+     * 设置基本参数
+     *
+     * @param param 基本参数
+     */
+    public void setParam(String param) {
+        this.param = param;
+    }
+
+    /**
+     * 获取单位
+     *
+     * @return UNIT - 单位
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    /**
+     * 设置单位
+     *
+     * @param unit 单位
+     */
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

@@ -15,5 +15,7 @@
     <result column="STATE" jdbcType="INTEGER" property="state" />
     <result column="BRAND" jdbcType="VARCHAR" property="brand" />
     <result column="DELETED" jdbcType="INTEGER" property="deleted" />
+    <result column="PARAM" jdbcType="VARCHAR" property="param" />
+    <result column="UNIT" jdbcType="VARCHAR" property="unit" />
   </resultMap>
 </mapper>

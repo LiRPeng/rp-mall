@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
-* Created by CodeGenerator on 2019/04/30.
+* Created by CodeGenerator on 2019/05/07.
 */
 @RestController
 @RequestMapping("/goods/sku")
